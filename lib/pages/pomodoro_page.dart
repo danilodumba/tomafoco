@@ -15,17 +15,6 @@ class PomodoroPage extends StatefulWidget {
 class _PomodoroPageState extends State<PomodoroPage> {
   final _controller = HomeController.instance;
 
-  // @override
-  // initState() {
-  //   _controller.setSettings();
-  //   setState(() {
-  //     //     pomodoroTime = value.pomodoroTime;
-  //     //     sleepTime = value.sleepTime;
-  //   });
-  //   // });
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -49,6 +38,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
                     title: _controller.getFormatedTime(),
                     description: _controller.getDescription(),
                     percent: _controller.getPercent(),
+                    observation: _controller.getTotalMinutes(),
                   ),
                   buttons(),
                 ],

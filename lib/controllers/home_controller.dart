@@ -131,4 +131,10 @@ class HomeController extends ChangeNotifier {
 
     return parsedTime;
   }
+
+  String getTotalMinutes() {
+    double total = this.totalTimeSeconds / 60;
+
+    return total.toInt().toString() + " min.";
+  }
 }
