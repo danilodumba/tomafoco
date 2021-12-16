@@ -46,6 +46,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
+  remove_alpha_ios: true
   image_path: "assets/images/tomafoco_icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to

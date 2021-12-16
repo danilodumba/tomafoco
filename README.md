@@ -1,6 +1,11 @@
-# tomafoco
+## O que é o tomafoco.
+Tomafoco é um projeto para técnica pomodoro. 
+Momentos de foco e momentos de descanso. Isso proporciona maior foco e desempenho em tarefas. 
 
-A new Flutter project.
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/>
 
 ## Getting Started
 
