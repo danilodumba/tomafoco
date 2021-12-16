@@ -2,10 +2,11 @@
 Tomafoco é um projeto para técnica pomodoro. 
 Momentos de foco e momentos de descanso. Isso proporciona maior foco e desempenho em tarefas. 
 
+<p>
 <img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_1.png" width="150" height="325" style="float:left" />
 <img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_2.png" width="150" height="325" style="float:left" />
 <img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_3.png" width="150" height="325" />
-
+</p>
 ## Como funciona?
 
 - Para iniciar basta clicar na seta em verde para o timer iniciar. 
