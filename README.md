@@ -1,12 +1,12 @@
-## O que é o tomafoco.
+## O que é o tomafoco?
 Tomafoco é um projeto para técnica pomodoro. 
 Momentos de foco e momentos de descanso. Isso proporciona maior foco e desempenho em tarefas. 
 
-<img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_1.png" width="150" height="325" />
-<img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_2.png" width="150" height="325" />
+<img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_1.png" width="150" height="325" style="float:left" />
+<img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_2.png" width="150" height="325" style="float:left" />
 <img src="https://raw.githubusercontent.com/danilodumba/tomafoco/main/screenshots/tomafoco_3.png" width="150" height="325" />
 
-## Como funciona.
+## Como funciona?
 
 - Para iniciar basta clicar na seta em verde para o timer iniciar. 
 - Para pular uma etapa basta clicar no X em vermelho. 
@@ -16,8 +16,9 @@ Momentos de foco e momentos de descanso. Isso proporciona maior foco e desempenh
 
 Todo o projeto foi construido em Flutter na sua versão 2.5.8 e com código fonte aberto. 
 
-## Observação.
+## Observação
 
-O projeto foi desenvolvido para aprendizado e passagem de conhecimento. 
+O projeto foi desenvolvido para aprendizado e passagem de conhecimento.
+
 Pode não ser encontrado nesse projeto as melhores praticas de desenvolvimento para Apps Flutter. 
 
