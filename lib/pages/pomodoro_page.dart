@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tomafoco/controllers/home_controller.dart';
 import 'package:tomafoco/pages/widgets/buttons_circular_widget.dart';
 import 'package:tomafoco/pages/widgets/timer_widget.dart';

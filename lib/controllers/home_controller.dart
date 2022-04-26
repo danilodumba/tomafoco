@@ -50,7 +50,7 @@ class HomeController extends ChangeNotifier {
             isWorking ? "Boa!! Pomodoro finalizado." : "Bora pro foco!",
             isWorking
                 ? "Pegue uma pausa para descanso!!"
-                : "Ta indo bem pra caralho!!!",
+                : "Está indo muito bem!!!",
           );
           cancelTimer();
         } else {
@@ -110,7 +110,7 @@ class HomeController extends ChangeNotifier {
   }
 
   String getDescription() {
-    return isWorking ? 'Borah pro foco!!!!' : 'Dê uma relaxada...';
+    return isWorking ? 'Bora pro foco!!!!' : 'Dê uma relaxada...';
   }
 
   double getPercent() {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tomafoco/controllers/settings_controller.dart';
 import 'package:tomafoco/pages/widgets/bulet_widget.dart';
 import 'package:tomafoco/themes/colors.dart';

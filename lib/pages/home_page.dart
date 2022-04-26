@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tomafoco/pages/pomodoro_page.dart';
 import 'package:tomafoco/pages/settings_page.dart';
 import 'package:tomafoco/themes/colors.dart';
