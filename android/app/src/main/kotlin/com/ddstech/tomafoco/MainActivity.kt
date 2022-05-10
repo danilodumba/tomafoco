@@ -1,4 +1,4 @@
-package com.example.tomafoco
+package com.ddstech.tomafoco
 
 import io.flutter.embedding.android.FlutterActivity
 
