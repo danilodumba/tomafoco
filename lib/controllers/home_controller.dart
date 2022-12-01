@@ -1,12 +1,19 @@
 import 'dart:async';
-
+import 'package:event_bus/event_bus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_background_service/flutter_background_service.dart';
+import 'package:tomafoco/entities/pomodore.dart';
 import 'package:tomafoco/entities/settings.dart';
+import 'package:tomafoco/providers.dart';
+import 'package:tomafoco/repositories/pomodore_repository.dart';
 import 'package:tomafoco/repositories/settings_repository.dart';
+import 'package:tomafoco/services/background_service.dart';
 import 'package:tomafoco/services/notification_service.dart';
 import 'package:tomafoco/themes/colors.dart';
 
 class HomeController extends ChangeNotifier {
+  static const taskName = 'com.ddstech.tomafoco.timer';
   int currentTimeSeconds = 30;
   int totalTimeSeconds = 30;
   Timer? _timer;
@@ -15,10 +22,20 @@ class HomeController extends ChangeNotifier {
   bool isStoped = true;
   static var instance = HomeController();
   var settingsRepository = SettingsRepository();
+  var pomodoreRepository = PomodoreRepository();
+  var backgroundService = BackgroundService();
   Settings? settings;
 
   HomeController() {
     setSettings();
+
+    FlutterBackgroundService().on('update').listen((event) {
+      timerTest();
+    });
+
+    // getIt<EventBus>().on().listen((event) {
+    //   print("Tempo decorrido -> $event");
+    // });
   }
 
   setSettings() {
@@ -38,33 +55,49 @@ class HomeController extends ChangeNotifier {
     return isWorking ? LightColors.ligthRed : LightColors.kGreen;
   }
 
-  void startTimer() {
-    const oneSec = Duration(
-      seconds: 1,
-    );
-    _timer = Timer.periodic(
-      oneSec,
-      (_timer) {
-        if (currentTimeSeconds == 0) {
-          NotificationService().showNotifications(
-            isWorking ? "Boa!! Pomodoro finalizado." : "Bora pro foco!",
-            isWorking
-                ? "Pegue uma pausa para descanso!!"
-                : "Está indo muito bem!!!",
-          );
-          cancelTimer();
-        } else {
-          currentTimeSeconds--;
-          notifyListeners();
-        }
-      },
-    );
+  void setTimerLeft(int timerLeft) {
+    currentTimeSeconds = timerLeft;
+  }
+
+  void startTimer() async {
+    // const oneSec = Duration(
+    //   seconds: 1,
+    // );
+    // _timer = Timer.periodic(
+    //   oneSec,
+    //   timerTest,
+    // );
+
+    // var pomodore =
+    //     Pomodore(settings?.pomodoroTime ?? 10, 0, DateTime.now().day);
+    // await pomodoreRepository.save(pomodore);
+
+    //timerTest();
+    backgroundService.startService();
+    FlutterBackgroundService().invoke("setAsBackground");
+  }
+
+  void timerTest() {
+    if (currentTimeSeconds == 0) {
+      NotificationService().showNotifications(
+        isWorking ? "Boa!! Pomodoro finalizado." : "Bora pro foco!",
+        isWorking
+            ? "Pegue uma pausa para descanso!!"
+            : "Está indo muito bem!!!",
+      );
+      cancelTimer();
+    } else {
+      currentTimeSeconds--;
+      notifyListeners();
+    }
   }
 
   void cancelTimer() {
     if (_timer != null) {
       _timer?.cancel();
     }
+
+    backgroundService.stopService();
 
     nextSteep();
   }
@@ -73,6 +106,8 @@ class HomeController extends ChangeNotifier {
     _timer?.cancel();
     isPaused = true;
     isStoped = false;
+    backgroundService.stopService();
+
     notifyListeners();
   }
 
@@ -80,9 +115,9 @@ class HomeController extends ChangeNotifier {
     if (_timer != null && _timer!.isActive) {
       return;
     }
+
     isPaused = false;
     isStoped = false;
-
     startTimer();
   }
 

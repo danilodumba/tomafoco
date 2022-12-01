@@ -1,5 +1,6 @@
 import UIKit
 import Flutter
+import flutter_background_service_ios
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -10,7 +11,12 @@ import Flutter
      if #available(iOS 10.0, *) {
       UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
     }
+
+    SwiftFlutterBackgroundServicePlugin.taskIdentifier = "com.ddstech.tomafoco.timer"
+   //WorkmanagerPlugin.registerTask(withIdentifier: "com.ddstech.tomafoco.timer")
+    
     GeneratedPluginRegistrant.register(with: self)
+
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

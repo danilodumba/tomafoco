@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tomafoco/controllers/home_controller.dart';
 import 'package:tomafoco/pages/pomodoro_page.dart';
 import 'package:tomafoco/pages/settings_page.dart';
 import 'package:tomafoco/themes/colors.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  var instance = HomeController.instance;
 
   void _onItemTapped(int index) {
     setState(() {

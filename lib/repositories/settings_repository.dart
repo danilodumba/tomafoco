@@ -1,3 +1,4 @@
+import 'package:tomafoco/entities/pomodore.dart';
 import 'package:tomafoco/entities/settings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
