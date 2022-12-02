@@ -15,8 +15,8 @@ class BackgroundService {
   void startService() async {
     var isRunning = await _service.isRunning();
     if (!isRunning) {
-      _service.startService();
       _service.invoke("setAsBackground");
+      _service.startService();
     }
   }
 
@@ -48,7 +48,11 @@ class BackgroundService {
     WidgetsFlutterBinding.ensureInitialized();
     DartPluginRegistrant.ensureInitialized();
 
-    print("IOS Background Rodando.");
+    Timer.periodic(const Duration(seconds: 1), (timer) async {
+      service.invoke(
+        'update',
+      );
+    });
 
     return true;
   }
@@ -71,8 +75,6 @@ class BackgroundService {
     service.on('stopService').listen((event) {
       service.stopSelf();
     });
-
-    print("Projeto rodando em foreground.");
 
     Timer.periodic(const Duration(seconds: 1), (timer) async {
       service.invoke(

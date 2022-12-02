@@ -106,7 +106,11 @@ class _SettingsPageState extends State<SettingsPage> {
                     label: sleepTime.toString(),
                     min: 1,
                     max: 30,
-                  )
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(child: Text("v 1.1.1")),
                 ],
               ),
             );
